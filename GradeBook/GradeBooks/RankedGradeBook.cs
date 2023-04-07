@@ -27,6 +27,15 @@ namespace GradeBook.GradeBooks
             if (result < 80) return 'D';
             return 'F';
         }
+
+        public override void CalculateStatistics()
+        {
+            int studentsNumber = Students.Count;
+            if (studentsNumber < 5)
+                Console.WriteLine("Ranked grading requires at least 5 students.");
+            else
+                base.CalculateStatistics();
+        }
     }
 }
 
